@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background-color: deepskyblue;
+            color: antiquewhite;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        button {
+            border: none;
+            background-color: antiquewhite;
+            color: deepskyblue;
+            padding: 5px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+    </style>
+    <title>Condicionais simples e compostas</title>
+</head>
+<body>
+    <h1>Sistema de multas</h1>
+    <label for="txtvel">Digite abaixo a velocidade do seu carro</label><br>
+    <input type="number" name="txtvel" id="inputVelocidade" placeholder="digite a velocidade...">
+    <button onclick="verificarVelocidade()">Verificar</button>
+    <p id="resposta"></p>
+    <script>
+        const resposta = document.getElementById('resposta')
+        function verificarVelocidade() {
+            const velocidade = parseFloat(document.getElementById('inputVelocidade').value)
+            resposta.innerHTML = `<p>Sua velocidade atual é de <strong>${velocidade} Km/h</strong></p>`
+            resposta.innerHTML += '<p>Utilize sempre cinto de segurança!!</p>'
+            if (velocidade > 70) {
+                resposta.innerHTML += 'Você foi <strong>multado</strong> por excesso de velocidade!! Por favor, dirija no máximo de 70 Km/h.'
+            }
+        }
+    </script>
+</body>
+</html>

@@ -4,15 +4,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-color: deepskyblue;
+        }
+        h1 {
+            color: yellow;
+        }
+        p {
+            color: wheat;
+        }
+    </style>
     <title>Meu primeiro programa</title>
 </head>
 <body>
     <h1>Olá,mundo!</h1>
     <p>Esse é o meu primeiro site com interações em html!</p>   
     <script>
-        alert('Esta é uma mensagem de teste')
-        window.confirm('Você gosta de desenvolver websites?')
-        window.prompt('Qual o seu nome?')
+        const nome = window.prompt('Qual é o seu nome?')
+        alert('É um grande prazer te conhecer '+ nome)
     </script> 
 </body>
 </html>
