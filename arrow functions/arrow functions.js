@@ -25,13 +25,28 @@ const celsiusToFahrenheit = celsiusTemp => (celsiusTemp + 32)* 1.8
 const temperaturaCelsius = 25
 console.log(`A temperatura de ${temperaturaCelsius}°C é equivalente à ${celsiusToFahrenheit(temperaturaCelsius).toFixed(2)}°F`)
 
+//arrow function com parâmetros ilimitados
+//para ter parâmetros ilimitados nas arrow functions, use o operador de espalhamento(...) com um único parâmetro
+//todos os argumentos passados para a função serão "interpretados como uma array" no parâmetro escrito na função
+//e o operador de espalhamento irá separar a array em argumentos diferentes.
 const findMax = (...args) => {
     args.sort()
     return args[args.length-1]
 }
 console.log(`O valor máximo entre os números da array é ${findMax(1,4,6,2,6,1,3,6,8)}`)
 
-const showDateTime = () => {
+//declaration functions com parâmetros ilimitados(usando o objeto 'arguments')
+//O objeto 'arguments' funciona como uma array que contém todos os argumentos passados na função
+function sumNumbers() {
+    let sum = 0
+    for (let i = 0; i < arguments.length; i++) {
+        sum += arguments[i]
+    }
+    return sum
+}
+console.log(sumNumbers(1,2,3,4,5,6,7,8,9))
+
+function showDateTime() {
     const data = new Date()
     const dia = data.getDate()
     const mês = data.getMonth()
